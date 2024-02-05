@@ -1,5 +1,6 @@
 import random
 
+
 class Modele():
     def __init__(self, parent):  # function utiliser a la creation de l'objet sur l'objet
         self.parent = parent
@@ -79,10 +80,10 @@ class Modele():
         self.score += len(collisions) * 5
 
     def zapper(self):
-        morts =[]
+        morts = []
         for i in self.daleks:
-            if self.doc.posX + 2 > i.posX > self.doc.posX - 2:
-                if self.doc.posY + 2 > i.posY > self.doc.posY - 2:
+            if self.doc.posX + 1 > i.posX > self.doc.posX - 1:
+                if self.doc.posY + 1 > i.posY > self.doc.posY - 1:
                     morts.append(i)
 
         for i in morts:
@@ -91,7 +92,6 @@ class Modele():
             self.daleks.remove(i)
 
         self.zap -= 1
-
 
 
 class TasFerraille():
